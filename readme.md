@@ -1,4 +1,4 @@
-# Crypto Failures Demo
+# Crypto Failures Demo Challenge
 
 ## Introduction
 
