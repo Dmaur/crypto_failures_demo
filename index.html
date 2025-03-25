@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <h1>Cryptographic failures Demo</h1>
+
+    <!-- No Cryptography Section -->
+    <div class="demo-section no-crypto">
+        <h2>No Cryptography (Unsafe)</h2>
+        <input type="password" id="plainPassword" placeholder="Enter password">
+        <button onclick="storePlain()">Store Password</button>
+        <div class="output" id="plainOutput"></div>
+        <p>⚠️ Password is stored in plain text - anyone can read it!</br> This might seem silly but this is what happened with Exactus</p>
+    </div>
+
+    <!-- Hashing Section -->
+    <div class="demo-section hashing">
+        <h2>With Hashing (Better)</h2>
+        <input type="password" id="hashedPassword" placeholder="Enter password">
+        <button onclick="storeHashed()">Store Password</button>
+        <div class="output" id="hashedOutput"></div>
+        <p>🔒 Password hashed - same passwords have same hashes and is easily cracked with a Rainbow table!</p>
+    </div>
+    <div class="demo-section cracking">
+        <h2>Hash Cracking </h2>
+        <div class="output" id="hashToCrack"></div>
+        <button onclick="crackHash()">Attempt to Crack Hash</button>
+        <div class="output" id="crackResult"></div>
+        <p>🔓 Hashed passwords are very easy to break with a rainbow table </p>
+    </div>
+
+    <!-- Salting Section -->
+    <div class="demo-section salting">
+        <h2>With Salting (Best)</h2>
+        <input type="password" id="saltedPassword" placeholder="Enter password">
+        <button onclick="storeSaltedHash()">Store Password</button>
+        <div class="output" id="saltedOutput"></div>
+        <p>🔒🔑 Password is hashed with unique salt - even same passwords look different!</p>
+    </div>
+
+    <div class="demo-section misconfig">
+        <h2>Weak Key Management (Misconfiguration)</h2>
+        <input type="text" id="messageToEncrypt" placeholder="Enter a message">
+        <button onclick="encryptedMessage()">Encrypt Message</button>
+        <div class="output" id="encryptedOutput"></div>
+        
+        <button onclick="decryptedMessage()">Decrypt Message</button>
+        <div class="output" id="decryptedOutput"></div>
+        
+        <p>⚠️ This crytpographic failure myuses a hardcoded encryption key! Attackers who find the key can decrypt any data.</p>
+    </div> 
+    
+   
+
+    <script src="main.js"></script>
+</body>
+</html>
