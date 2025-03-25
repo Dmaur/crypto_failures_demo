@@ -17,10 +17,10 @@ function generateHash(password) {
     return CryptoJS.SHA256(password).toString();
 }
 function generateSalt() {
-    return CryptoJS.lib.WordArray.random(16).toString();
+    return CryptoJS.lib.WordArray.random(16).toString(CryptoJS.enc.Hex);
 }
 function generateSaltedHash(password, salt) {
-    return CryptoJS.SHA256(salt + password).toString();
+    return CryptoJS.SHA256(salt + password).toString(CryptoJS.enc.Hex);
 }
 
 function encryptMessage(message, key) {

@@ -1,9 +1,33 @@
-# Crypto Failures Demo Challenge
+# 📌 Crypto Failures Demo Challenge
 
-## Introduction
+## 📝 Introduction
+In the demo, we explored **hashing and salting** using the **SHA-256** algorithm. While this approach provides a level of security, it is not the most robust method available.
 
-Where we left off, we saw an example of a hard-coded key being placed in the code base. This is obviously a big **NO NO**, we already know that. For the past while, we have been using environment variables to ensure we don't do that kind of thing.
+## 🎯 Task
+Your objective is to investigate the **PBKDF2 (Password-Based Key Derivation Function 2)** algorithm and understand why it is superior to **SHA-256** for password hashing.
 
-## Task
+## ✅ Requirements
+To earn full marks, complete both of the following tasks:
 
-Take some time to research what other ways or additional things we can do/ use along with environment variables (you may find we have already been doing some others) so that we are not exposing keys and other sensitive information in our code base. Write up a small paragraph (4-6 sentences) about what you have found. This can be submitted to me via Teams or school email.
+- **🔍 Research Task (50% of the mark)**
+  - Write a short explanation about why **PBKDF2** is better than **SHA-256**.
+
+- **💻 Coding Task (50% of the mark)**
+  - Modify the function in `main.js` to use **PBKDF2** instead of **SHA-256**.
+
+### 🔧 Original Function (to be modified):
+```javascript
+function generateSaltedHash(password, salt) {
+    return CryptoJS.SHA256(salt + password).toString(CryptoJS.enc.Hex);
+}
+```
+
+## 📩 Submission
+Send the following via **Teams** or **School Email**:
+1. A **short explanation** of PBKDF2’s advantages.
+2. A **screenshot of the modified function**.
+3. A **screenshot of the output** in the *"with salting"* section.
+
+---
+**Happy Hashing! 🚀**
+
